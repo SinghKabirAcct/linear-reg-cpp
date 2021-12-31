@@ -40,11 +40,6 @@ int main(){
     }
   }
 
-  for(int i=0; i<100; i++){
-    cout << to_string(equations_t1[i]) + ", ";
-    cout << to_string(equations_t1x[i]) + "\n";
-  }
-
   float realVals[10] = {};
 	int error[100] = {};
 
@@ -79,12 +74,6 @@ int main(){
 		error[i/10] = holder.error[i];
 	}
 
-	for(int i=0; i<1000; i++){
-    cout << "value (" << i % 5 << ", "  << holder.vals[i] << ")" << endl;
-  }
-	for(int i=0; i<100; i++){
-    cout << error[i] << endl;
-	}
 	int min = error[0];
 	int minPos = 0;
 	
