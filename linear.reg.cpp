@@ -82,6 +82,7 @@ int main(){
       min = error[i];
 			minPos = i;
 		}
+		cout << error[i] << " | " << equations_t1[i] << " + " << equations_t1x[i] << "x";
 	}
 
 	cout << min << " at index " << minPos << " of errorList is the lowest error:" << endl;
