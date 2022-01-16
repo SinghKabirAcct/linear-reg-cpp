@@ -20,8 +20,9 @@ double  return_reg_equation_vals(double m, double b, double reg_vals[11], int iV
 }
 
 double m_coefficient = 0;
-double b_coefficient = 0.000000000000000;
+double b_coefficient = 0;
 double errorPrev = numeric_limits<double>::infinity();
+double prevm = 0;
 
 void findEquationDriver(double learning_rate){
 	double reg_vals[11];
@@ -35,12 +36,15 @@ void findEquationDriver(double learning_rate){
 		errorVal = (reg_vals[i]-real_vals[i]) + errorVal;
 		cout << errorVal << endl;
 	}
-	m_coefficient = m_coefficient - (errorVal * (1.00/11.00) * learning_rate);
-	if(errorPrev != 0){
+	if((abs(errorVal)<=abs(errorPrev)) && abs(errorVal)>0.0001){
+		m_coefficient = m_coefficient - (errorVal * (1.00/11.00) * learning_rate);
 		cout << m_coefficient << endl;
+		errorPrev = errorVal;
+		prevm = m_coefficient;
+		findEquationDriver(0.01);
 	}
 	else{
-		cout << m_coefficient << "x + " << b_coefficient << endl;
+		cout << prevm << "x + " << b_coefficient << endl;
 	}
 }
 
