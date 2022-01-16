@@ -23,10 +23,13 @@ void findEquationDriver(float learning_rate){
 	float m_coefficient = 0;
 	float b_coefficient = 0;
 	float reg_vals[11];
+	float errorVal = 0;
 	for(int i = 0; i<11; i++){
 		float regRunner = return_reg_equation_vals(m_coefficient, b_coefficient, reg_vals, i);
 		cout <<  regRunner << endl;
 		reg_vals[i] = regRunner;
+		errorVal = ((reg_vals[i]-real_vals[i])*(reg_vals[i]-real_vals[i])) + errorVal;
+		cout << errorVal << endl;
 	}
 }
 
