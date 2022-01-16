@@ -35,7 +35,7 @@ void findEquationDriver(double learning_rate){
 		errorVal = (reg_vals[i]-real_vals[i]) + errorVal;
 		cout << errorVal << endl;
 	}
-	m_coefficient = m_coefficient - (errorVal * learning_rate);
+	m_coefficient = m_coefficient - (errorVal * (1.00/11.00) * learning_rate);
 	if(errorPrev != 0){
 		cout << m_coefficient << endl;
 	}
@@ -46,6 +46,6 @@ void findEquationDriver(double learning_rate){
 
 int main(){
 	questions();
-	findEquationDriver(0.5);
+	findEquationDriver(0.1);
 	return 0;
 }
