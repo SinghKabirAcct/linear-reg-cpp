@@ -12,9 +12,9 @@ void questions(){
 		cout << "Please Insert the Y Value for X = " << i << ": " << endl;
 		cin >> real_vals[i];
 	}
-	cout << "What learning rate do you want to apply? (reccommended around 0.1)" << endl;
+	cout << "What learning rate do you want to apply? (reccommended around 0.01)" << endl;
 	cin >> learnRate;
-	cout << "What level of accuracy? (Range: 1-99, reccommended between 90-99)" << endl;
+	cout << "What level of accuracy? (Range: 1-99, reccommended between 20-99, lower is better)" << endl;
 	cin >> (accuracyVar);
 	accuracyVar = accuracyVar/100000000;
 
